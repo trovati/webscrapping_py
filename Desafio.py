@@ -47,7 +47,7 @@ class Crawler_table():
 # Começa extração das informações da pagina alvo 2 e retorna em formato de Data Frame     
     def extractionPaginaAlvo_2(self):
 
-        df = pd.DataFrame(columns=['Memory','vCPUs', 'SSD Disk','Transfer', '$/MO','$/hour'])
+        df = pd.DataFrame(columns=['Memory','vCPUs', 'SSD Disk','Transfer', '$/MO'])
         response = requests.get('https://www.digitalocean.com/pricing/')
         content_web = html.fromstring(response.content)
         
@@ -63,7 +63,6 @@ class Crawler_table():
                 content_table = rows_table[link].xpath('.//a/div/ul/li')
                 money_table = rows_table[link].xpath('.//a/div/div')
                 rows_table = table.xpath('.//li[@class = "priceBoxItem"]')
-                time_table = rows_table[link].xpath('.//a/div/span')
                 #print(money_table[0].text_content())
                 data = []
                 data.append(content_table[0].text_content().split("/")[0])
@@ -71,7 +70,6 @@ class Crawler_table():
                 data.append(content_table[1].text_content().split("SSD")[0])
                 data.append(content_table[2].text_content().split("transfer")[0])
                 data.append(money_table[0].text_content().split("/")[0])
-                data.append(time_table[0].text_content().split("/")[0])
                 df.loc[link] = data
         else:
             print("Infelizmente não foi possível extrair os dados, verifique os seletores se estão corretos")
@@ -85,17 +83,17 @@ class Crawler_table():
         dic = df.to_dict()
         with open(repository+'/'+name+'.json', 'w') as data:
             json.dump(dic, data,indent=4)
-        print("############################")
-        print("Arquivo salvo com sucesso")
-        print("############################")
+        print("##########################################")
+        print("Arquivo salvo no formato JSON com sucesso")
+        print("##########################################")
 # Metodo para salvar o arquivo no formato CSV. 
     def Save_CSV(self,df):
         print("Insera o nome do arquivo, sem .csv")
         name = input()
         df.to_csv(repository+'/'+name+'.csv',index=False)
-        print("############################")
-        print("Arquivo salvo com sucesso")
-        print("############################")
+        print("#########################################")
+        print("Arquivo salvo no formato CSV com sucesso")
+        print("#########################################")
 
 
 # Metodo para printar na tela o conteudo extraido. 
@@ -112,7 +110,7 @@ class Crawler_table():
             action = -1
             while action != 0: 
                 print("Selecione qual opção deseja executar:")
-                action = input("1 para imprimir os dados\n2 para Salvar em CSV\n3 para Salvar em json\n0 para sair\nDigite: ")
+                action = input("1 para imprimir os dados\n2 para Salvar em CSV\n3 para Salvar em json\n0 para sair\nDigite sua opção: ")
                 if action != "0":
                     pagina = input("Qual site deseja fazer WebScrapping?\n1 para a página alvo Vultr\n2 para a página alvo Digital Ocean: ")
                 
