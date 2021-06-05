@@ -24,9 +24,9 @@ As informações de interesse para o desafio eram retirar os dados das colunas v
 
 O programa foi desenvolvido no sistema Linux Mint 19.1, com Python na versão 2.7.17, e foram utilizadas as seguintes bibliotecas:
 
-+**pandas (0.24.2)**  - permite converter o data frame em dicionário
-+**lxml-4.6.3** - permite selecionar os elementos desejados pelo xpath e extrair os textos dentros deles
-+**requests-2.25.1** - para se conectar com as páginas e extrair o conteúdo html delas
++**pandas (0.24.2)**  - permite converter o data frame em dicionário<br>
++**lxml-4.6.3** - permite selecionar os elementos desejados pelo xpath e extrair os textos dentros deles<br>
++**requests-2.25.1** - para se conectar com as páginas e extrair o conteúdo html delas<br>
 + **json** - biblioteca padrão da linguagem
 + **os** - biblioteca padrão da linguagem
 + **sys** - biblioteca padrão da linguagem
