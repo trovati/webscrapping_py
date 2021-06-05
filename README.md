@@ -2,7 +2,7 @@
 
 ## Introdução
 
-I desafio proposto pela empresa Digesto, consistiu em criar um crawler capaz de extrair as informações de dois sites, sendo eles da Vultr no 
+O desafio proposto pela empresa Digesto, consistiu em criar um crawler capaz de extrair as informações de dois sites, sendo eles da Vultr no 
 com o site: https://www.vultr.com/products/cloud-compute/#pricing e o site da Digital Ocean, https://www.digitalocean.com/pricing. O principal 
 objetivo do crawler, era retirar as informações das tabelas contidas no html disponibilizadas em seus sites, e tendo 3 opções de divulgação, sendo 
 imprimir os dados obtidos, pondendo salvar em formato CSV, e no formato JSON.<br>
@@ -11,7 +11,7 @@ imprimir os dados obtidos, pondendo salvar em formato CSV, e no formato JSON.<br
 
 ![image](https://user-images.githubusercontent.com/48772900/120903966-be10f400-c61f-11eb-93e7-d95dedc924af.png)
 
-Asinformações de interesse para o desafio era retirar os dados das colunas Storage, CPU, Memory, Bandwith e Price
+As informações de interesse para o desafio era retirar os dados das colunas Storage, CPU, Memory, Bandwith e Price
 
 
 <br> No site da Digital Ocean o objetivo era extrair as informações da tabela abaixo:
